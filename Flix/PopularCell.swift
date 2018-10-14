@@ -1,20 +1,20 @@
 //
-//  MovieCell.swift
+//  PopularCell.swift
 //  Flix
 //
-//  Created by Mac on 6/25/1397 AP.
+//  Created by Mac on 7/22/1397 AP.
 //  Copyright © 1397 Abraham Asmile. All rights reserved.
 //
 
 import UIKit
-import AlamofireImage
 
-class MovieCell: UITableViewCell {
+class PopularCell: UITableViewCell {
     
-    
-    @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    
     @IBOutlet weak var overviewLabel: UILabel!
+    
+    @IBOutlet weak var posterImage: UIImageView!
     
     var movies: Movie!{
         didSet {
@@ -24,11 +24,10 @@ class MovieCell: UITableViewCell {
             
             
             let posterpathURL = URL(string: baseUrlString + movies.posterUrl!)!
-            posterImageView.af_setImage(withURL: posterpathURL)
+            posterImage.af_setImage(withURL: posterpathURL)
         }
     }
     
-        
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -41,4 +40,3 @@ class MovieCell: UITableViewCell {
     }
 
 }
-
